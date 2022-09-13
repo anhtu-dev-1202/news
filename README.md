@@ -44,32 +44,3 @@ VUE SCROLL: https://www.npmjs.com/package/vuescroll\ <br/>
 VUE TINYCME: https://reposhub.com/vuejs/rich-text-editing/dyonir-vue-tinymce-editor.html <br/>
 HTML PURIFIER: https://openbase.io/js/html-purify/documentation <br/>
 VUE CHARTS: https://www.npmjs.com/package/vue-chartjs <br/>
-
-## Sequence diagram login with Odakyu Authentication
-
-
-```mermaid
-
-sequenceDiagram
-
-    autonumber
-
-    actor Users
-
-    Users->>+Phone: 1. Open app
-
-    Phone->>+OdakyuServers: 2. Logs into Odakyu
-
-    OdakyuServers-->>-Phone: 3. Returns accessToken
-
-    Phone->>+Servers: 4. Sends AccessToken to server
-
-    Servers->>-OdakyuServers: 5. Validates AccessToken with Odakyu server
-
-    OdakyuServers-->>+Servers: 6. Validates successful
-
-    Servers-->>+Phone: 7. Returns Token, refreshToken, user data and coin data
-
-    Phone->>+Servers: 8. Makes request with JWT in Auth header
-
-```
